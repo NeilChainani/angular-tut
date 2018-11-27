@@ -1,3 +1,17 @@
 import { Component } from "@angular/core";
-@Component({ selector: "courses", template: "<h2>Courses</h2>" })
-export class CoursesComponent {}
+import { CoursesService } from "./courses.service";
+@Component({
+  selector: "courses",
+  template: `
+    <button [style.background-color]="color">Save</button>
+  `
+})
+export class CoursesComponent {
+  title = "test me";
+  colSpan = 2;
+  courses;
+  color = "red";
+  constructor(service: CoursesService) {
+    this.courses = service.getCourses();
+  }
+}
