@@ -3,7 +3,7 @@ import { CoursesService } from "./courses.service";
 @Component({
   selector: "courses",
   template: `
-    <input (keyup.enter)="onKeyUp()" />
+    <input #lol (keyup.enter)="onKeyUp(lol)" />
   `
 })
 export class CoursesComponent {
@@ -15,8 +15,8 @@ export class CoursesComponent {
   onDivClicked() {
     console.log("div was clicked");
   }
-  onKeyUp() {
-    console.log("enter was used");
+  onKeyUp(lol) {
+    console.log("enter was used", lol.value);
   }
   courses;
   color = "red";
