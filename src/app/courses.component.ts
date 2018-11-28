@@ -3,20 +3,22 @@ import { CoursesService } from "./courses.service";
 @Component({
   selector: "courses",
   template: `
-    <input #lol (keyup.enter)="onKeyUp(lol)" />
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
   `
 })
 export class CoursesComponent {
   title = "test me";
   colSpan = 2;
+  email = "neilchainani1@gmail.com";
+
   onSave($event) {
     console.log("test", $event);
   }
   onDivClicked() {
     console.log("div was clicked");
   }
-  onKeyUp(lol) {
-    console.log("enter was used", lol.value);
+  onKeyUp() {
+    console.log(this.email);
   }
   courses;
   color = "red";
