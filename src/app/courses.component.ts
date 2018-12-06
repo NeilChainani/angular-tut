@@ -3,11 +3,7 @@ import { CoursesService } from "./courses.service";
 @Component({
   selector: "courses",
   template: `
-    {{ course.title | uppercase | lowercase }} <br />
-    {{ course.students | number }} <br />
-    {{ course.rating | number: "2.2-2" }} <br />
-    {{ course.price | currency: "AUD" }} <br />
-    {{ course.releaseDate | date: "shortDate" }}
+    <a href="#" class="btn btn-success" (click)="onSave()">test </a>
   `
 })
 export class CoursesComponent {
@@ -15,9 +11,10 @@ export class CoursesComponent {
   rating: 5;
   colSpan = 2;
   email = "neilchainani1@gmail.com";
+  text: String = "superLong test woo i am here";
 
-  onSave($event) {
-    console.log("test", $event);
+  onSave() {
+    console.log("test");
   }
   onDivClicked() {
     console.log("div was clicked");
